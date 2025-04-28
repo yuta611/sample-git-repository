@@ -157,14 +157,30 @@
         ❤️ いいね <span id="like-20250423">0</span>
       </button>
     </div>
-<!--いいねボタン反映-->	  
+	  
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbwRvYZ251OQzC-OBRBj75Z17lTCDbFa1yPX-WJnhtsQYZJwrDm0YdHFukq-EHvLyBjB/exec";
 
+// ページが読み込まれたときにローカルストレージのカウントを表示
+  window.onload = function() {
+    const storedLikes = localStorage.getItem('like-20250428');
+    if (storedLikes) {
+      document.getElementById('like-20250428').innerText = storedLikes;
+    } else {
+// 初期状態としてカウントがない場合（初回訪問など）
+      document.getElementById('like-20250428').innerText = 0;
+    }
+  };
+
+// いいねボタンがクリックされた時
   function likePost(postId) {
+// Google Apps Scriptにリクエストしてカウントを更新
     fetch(`${scriptURL}?postId=${postId}`)
       .then(res => res.text())
       .then(count => {
+// Google Sheetsから返ってきたカウントをローカルストレージに保存
+        localStorage.setItem(`like-${postId}`, count);
+// ページに反映
         document.getElementById(`like-${postId}`).innerText = count;
       })
       .catch(err => console.error("エラー", err));
