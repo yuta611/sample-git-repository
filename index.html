@@ -221,12 +221,12 @@
      　　　
 <!-- 必要なスクリプト -->
 <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbxuqzAZwfUbfkucfhY6h9AsmHc4fembYsi6MCAPoJFJ7mIm_J6wLlbPf7Xk194_H4BD/exec";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbxB8IBF8nKPvCVJl5jc0Th2G_tfhqQsR-cEdNxOl3oB5tBDEaRGnZ_0alDt8VlWssCC/exec";
 
   // 初期表示時に全てのポストの現在のカウントを取得
   window.onload = function() {
     const postIds = ["20250428", "20250423"]; // ← 投稿IDをここに追加してください
-
+	  
     postIds.forEach(postId => {
       fetch(`${scriptURL}?postId=${postId}`)
         .then(res => res.text())
