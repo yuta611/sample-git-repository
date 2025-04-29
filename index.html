@@ -126,54 +126,26 @@
 	
 	
 	
-<!--空欄--->	
 <div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
   <div class="card-body">
-<!--日付を中央に配置-->
+    <!--日付を中央に配置-->
     <div style="text-align: center;">
       <h5 class="card-title" style="color:black; margin: 0;">2025年4月28日</h5>
     </div>
-<!--いいねボタンを右寄せで配置 like-のあと2箇所はその日の日付に変更すること-->
+    <!--いいねボタンを右寄せで配置-->
     <div style="text-align: right; margin-top: 0px;">
       <button onclick="likePost('20250428')" class="btn btn-outline-danger btn-sm">
         ❤️ いいね <span id="like-20250428">0</span>
       </button>
     </div>
-	  
-<script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwRvYZ251OQzC-OBRBj75Z17lTCDbFa1yPX-WJnhtsQYZJwrDm0YdHFukq-EHvLyBjB/exec";
 
-// ページが読み込まれたときにローカルストレージのカウントを表示
-  window.onload = function() {
-    const storedLikes = localStorage.getItem('like-20250428');
-    if (storedLikes) {
-      document.getElementById('like-20250428').innerText = storedLikes;
-    } else {
-// 初期状態としてカウントがない場合（初回訪問など）
-      document.getElementById('like-20250428').innerText = 0;
-    }
-  };
-// いいねボタンがクリックされた時
-  function likePost(postId) {
-// Google Apps Scriptにリクエストしてカウントを更新
-    fetch(`${scriptURL}?postId=${postId}`)
-      .then(res => res.text())
-      .then(count => {
-// Google Sheetsから返ってきたカウントをローカルストレージに保存
-        localStorage.setItem(`like-${postId}`, count);
-// ページに反映
-        document.getElementById(`like-${postId}`).innerText = count;
-      })
-      .catch(err => console.error("エラー", err));
-  }
-</script>
-<!--コメント5-->	  
+    <!--コメント5-->
     <p class="card-text" style="color:black; font-size: 1.5rem;">いいね調整中...できているのかな反映まで時間がかかるかも？</p>
     <img class="img-fluid mt-0" style="max-height: 300px;">
   </div>
 </div>
 <!--空白-->
-	<div style="height: 0px;"></div>
+<div style="height: 0px;"></div>
 
 	
 	
@@ -249,6 +221,41 @@
      　　　</div>
      　　　
 <!-- 必要なスクリプト -->
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw4xyyrBrpA28ZTSn7fmsABov3aZ9zyWyNE0pr38gnvLI9eiv3gvGqzNkJAso-tb_QU/exec";
+
+  // 初期表示時に全てのポストの現在のカウントを取得
+  window.onload = function() {
+    const postIds = ["20250428", "20250423"]; // ← 投稿IDをここに追加してください
+
+    postIds.forEach(postId => {
+      fetch(`${scriptURL}?postId=${postId}`)
+        .then(res => res.text())
+        .then(count => {
+          document.getElementById('like-' + postId).innerText = count;
+          localStorage.setItem('like-' + postId, count);
+        })
+        .catch(err => {
+          console.error("エラー", err);
+        });
+    });
+  };
+
+  // いいねボタンがクリックされた時
+  function likePost(postId) {
+    fetch(`${scriptURL}?postId=${postId}`)
+      .then(res => res.text())
+      .then(count => {
+        console.log("カウント:", count);
+        document.getElementById('like-' + postId).innerText = count;
+        localStorage.setItem('like-' + postId, count);
+      })
+      .catch(err => {
+        console.error("エラー", err);
+      });
+  }
+</script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
