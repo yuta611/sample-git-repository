@@ -139,7 +139,11 @@
     </div>
 
 <!--コメント5-->
-    <p class="card-text" style="color:black; font-size: 1.5rem;">いいね調整中...できているのかな反映まで時間がかかるかも？</p>
+    <p class="card-text" style="color:black; font-size: 1.5rem;">いいね調整中...できているのかな反映まで時間がかかるかも？
+	  <br>4月29日追記
+		<br>いいね0のままだけどカウントはされているっぽい連打されてる
+	  </p>
+	  
     <img class="img-fluid mt-0" style="max-height: 300px;">
   </div>
 </div>
@@ -221,14 +225,14 @@
      　　　
 <!-- 必要なスクリプト -->
 <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwbwXjUhr1NG6a9etjsGbrJP7R3iKvVl3HalFJoaQZgQJgPQBH-zg71yyGulTvV01w5/exec";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwPHCWLZ8acJGUZUb0uVpWLJHNj4yLfmBonbwj9VRmfpw8s1rmEeo0YNJsFu_T7XF30/exec";
 
 // 初期表示時に全てのポストの現在のカウントを取得
   window.onload = function() {
-    const postIds = ["20250428", "20250423"]; // ← 投稿IDをここに追加してください
+    const postIds = ["20250428", "20250423"]; // ← 投稿IDをここに追加
 	  
     postIds.forEach(postId => {
-      fetch(`${scriptURL}?postId=${postId}`)
+      fetch(`${scriptURL}?postId=${postId}&mode=get`)
         .then(res => res.text())
         .then(count => {
           document.getElementById('like-' + postId).innerText = count;
@@ -242,17 +246,18 @@
 
 // いいねボタンがクリックされた時
   function likePost(postId) {
-    fetch(`${scriptURL}?postId=${postId}`)
-      .then(res => res.text())
-      .then(count => {
-        console.log("カウント:", count);
-        document.getElementById('like-' + postId).innerText = count;
-        localStorage.setItem('like-' + postId, count);
-      })
-      .catch(err => {
-        console.error("エラー", err);
-      });
-  }
+  fetch(`${scriptURL}?postId=${postId}&mode=add`)
+    .then(res => res.text())
+    .then(count => {
+      console.log("カウント:", count);
+      document.getElementById('like-' + postId).innerText = count;
+      localStorage.setItem('like-' + postId, count);
+    })
+    .catch(err => {
+      console.error("エラー", err);
+    });
+}
+
 </script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
