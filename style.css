@@ -1,1 +1,28 @@
 @charset "UTF-8";
+	  /* 文字サイズの変更 */
+	  #short {
+		  width: 100vw;
+	  }
+/* ナビゲーションバーを固定 */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+/* 背景画像 + ナビバー余白 */
+  body{
+  padding-top: 80px;  /* ナビゲーションバーとの余白調整 */
+  margin: 0;          /* マージンをゼロにして余白を取り除く */
+  
+/* 背景画像設定 */
+  background-image: url('https://sozaino.site/wp-content/uploads/2022/11/mori37-1280x720.png'); /* ここに背景画像のURLを入れる */
+  background-size: cover;           /* 背景画像が画面いっぱいに広がるようにする */
+  background-position: center;      /* 画像の中心を画面の中心に合わせる */
+  background-attachment: fixed;     /* スクロールしても背景画像は固定される */
+  background-repeat: no-repeat;     /* 背景画像の繰り返しをしない */
+  
+  font-family: 'Zen Maru Gothic', sans-serif;  /* バーのフォント設定 */
+  font-weight: bold;  /* バーの文字　太文字 */
+  color: white;       /* バーの文字色を白に設定 */
+}
