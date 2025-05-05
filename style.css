@@ -1,8 +1,4 @@
 @charset "UTF-8";
-	  /* 文字サイズの変更 */
-	  #short {
-		  width: 100vw;
-	  }
 /* ナビゲーションバーを固定 */
   .navbar {
     position: fixed;
