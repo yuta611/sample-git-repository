@@ -260,7 +260,7 @@
 
 // 初期表示時に全てのポストの現在のカウントを取得
   window.onload = function() {
-    const postIds = ["20250502", "20250428", "20250423"]; // ← 投稿IDをここに追加
+    const postIds = ["20250502", "20250428", "20250423", "20250507"]; // ← 投稿IDをここに追加
 	  
     postIds.forEach(postId => {
       fetch(`${scriptURL}?postId=${postId}&mode=get`)
