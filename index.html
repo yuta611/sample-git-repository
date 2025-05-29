@@ -7,7 +7,31 @@
     <title>俺はゆうただHP</title>
 <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+/* ナビゲーションバーを固定 */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+/* 背景画像 + ナビバー余白 */
+  body{
+  padding-top: 80px;  /* ナビゲーションバーとの余白調整 */
+  margin: 0;          /* マージンをゼロにして余白を取り除く */
+  
+/* 背景画像設定 */
+  background-image: url('https://sozaino.site/wp-content/uploads/2022/11/mori37-1280x720.png'); /* ここに背景画像のURLを入れる */
+  background-size: cover;           /* 背景画像が画面いっぱいに広がるようにする */
+  background-position: center;      /* 画像の中心を画面の中心に合わせる */
+  background-attachment: fixed;     /* スクロールしても背景画像は固定される */
+  background-repeat: no-repeat;     /* 背景画像の繰り返しをしない */
+  
+  font-family: 'Zen Maru Gothic', sans-serif;  /* バーのフォント設定 */
+  font-weight: bold;  /* バーの文字　太文字 */
+  color: white;       /* バーの文字色を白に設定 */
+}
+　</style>	 
   </head>
   <body>	 
 <!-- ナビゲーションバー -->
@@ -53,40 +77,17 @@
 		text-shadow: 2px 2px 10px #ffffff; /* 黒いふち（影）最初のpx2つは影の位置横縦　最後のpx影のぼかし */
     }
   </style>
-<div id="short">
   <h2 class="text-center my-4">
     ポケモンを中心にやりたいことに挑戦するチャンネルです。<br>
     ショート動画をメインにしています！<br><br>
 	ポケポケの動画をあげています!<br>
   </h2>
-	  </div>
-	  
   <div class="container">
     <div class="row text-center">
 <!-- 左側のYouTubeプレイリスト -->
     <div class="col-md-6 pb-1 pb-md-0">
       <div class="card">
         <iframe width="" height="315" src="https://www.youtube.com/embed/videoseries?list=PLdbE1xBBLD863bg4YyyHvvuEDYl9TwJ8B" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-<!-- 右側のYouTubeプレイリスト -->
-    <div class="col-md-6 pb-1 pb-md-0">
-      <div class="card">
-        <iframe width="" height="315" src="https://www.youtube.com/embed/videoseries?list=PLdbE1xBBLD84qHVRwni15fqP8EXSDYa29" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</div>  
- <h2 class="text-center my-4">
-    紙のポケカもやっています。<br>
-	開封したりデッキを組んだりたまに大会に出ています。<br>
-  </h2>
-<div class="container">
-    <div class="row text-center">
-<!-- 左側のYouTubeプレイリスト -->
-    <div class="col-md-6 pb-1 pb-md-0">
-      <div class="card">
-        <iframe width="" height="315" src="https://www.youtube.com/embed/videoseries?list=PLdbE1xBBLD85y4f8N2ENYzwLisxMT4q39" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 <!-- 右側のYouTubeプレイリスト -->
@@ -121,9 +122,8 @@
 <div class="container mt-5">
   <h3 class="text-center" style="color: black; font-weight: bold;">📝 ゆうたの一言日記 📝</h3>
 
-
 	
-
+	
 <div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
   <div class="card-body">
 <!--日付を中央に配置-->
@@ -138,8 +138,7 @@
     </div>
 <!--コメント8-->
     <p class="card-text" style="color:black; font-size: 1.5rem;">1日で100pt盛ったけどタイムアップ<br>
-	    次回ランクからはハイパーやマスターにも連勝ボーナスができるみたい！
-
+		次回ランクからはハイパーやマスターにも連勝ボーナスができるみたい！
 	  </p>
 	  
     <img src="https://yt3.ggpht.com/ADiBpnGpqnDoQKOzrBbsFiPh9I7zYczCi4P-CnjcWPjlEGv20um1qAcP4NQgDhy9z08r5S26iH17=s800-c-fcrop64=1,00002118ffffdee7-rw-nd-v1"
@@ -148,11 +147,10 @@
 </div>
 <!--空白-->
 <div style="height: 0px;"></div>
-
 	
-
 	
-	<div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
+	
+		<div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
   <div class="card-body">
 <!--日付を中央に配置-->
     <div style="text-align: center;">
@@ -176,13 +174,12 @@
 <div style="height: 0px;"></div>
 	
 	
-
 	
-
+	
 	<div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
   <div class="card-body">
 <!--日付を中央に配置-->
-    <div style="text-align: center;">
+    <div style="text-align: center;"
       <h5 class="card-title" style="color:black; margin: 0;">2025年5月15日</h5>
     </div>
 <!--いいねボタンを右寄せで配置-->
@@ -202,9 +199,7 @@
 <!--空白-->
 <div style="height: 0px;"></div>
 	
-	
-
-	
+	  
 	
 	<div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
   <div class="card-body">
@@ -229,9 +224,10 @@
   </div>
 </div>
 <!--空白-->
-<div style="height: 0px;"></div>	
+<div style="height: 0px;"></div>
 	
-
+	
+	
 <div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
   <div class="card-body">
 <!--日付を中央に配置-->
@@ -255,8 +251,6 @@
 <!--空白-->
 <div style="height: 0px;"></div>
 
-
-	
 	
 <div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
   <div class="card-body">
