@@ -100,7 +100,7 @@
 </div>  
  <h2 class="text-center my-4">
     紙のポケカもやっています。<br>
-	開封したりデッキを組んだりたまに大会に出ています。<br>
+	開封したりデッキを組んだりたまに大会に出たりしています。<br>
   </h2>
 <div class="container">
     <div class="row text-center">
@@ -121,6 +121,36 @@
 <!-- コメント欄（新しいコメントを上に追加） -->
 <div class="container mt-5">
   <h3 class="text-center" style="color: black; font-weight: bold;">📝 ゆうたの一言日記 📝</h3>
+
+
+
+	
+<div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
+  <div class="card-body">
+<!--日付を中央に配置-->
+    <div style="text-align: center;">
+      <h5 class="card-title" style="color:black; margin: 0;">2025年6月13日</h5>
+    </div>
+<!--いいねボタンを右寄せで配置-->
+    <div style="text-align: right; margin-top: 0px;">
+      <button onclick="likePost('20250613')" class="btn btn-outline-danger btn-sm">
+        ❤️ いいね <span id="like-20250613">0</span>
+      </button>
+    </div>
+<!--コメント8-->
+    <p class="card-text" style="color:black; font-size: 1.5rem;">イベントカミツルギがようやく2枚目GETだぜ！<br>
+		と、思ったら新しいイベントカード出てきて草<br>
+	    また集めなきゃ
+	  </p>
+	  
+    <img src="https://yt3.ggpht.com/ADiBpnGpqnDoQKOzrBbsFiPh9I7zYczCi4P-CnjcWPjlEGv20um1qAcP4NQgDhy9z08r5S26iH17=s800-c-fcrop64=1,00002118ffffdee7-rw-nd-v1"
+		 alt="盛り盛り" class="img-fluid mt-0" style="max-height: 300px;">
+  </div>
+</div>
+<!--空白-->
+<div style="height: 0px;"></div>
+	
+	
 
 	
 	
@@ -383,7 +413,7 @@
 
 // 初期表示時に全てのポストの現在のカウントを取得
   window.onload = function() {
-    const postIds = ["20250529","20250525","20250515","20250512","20250507","20250502","20250428","20250423"]; // ← 投稿IDをここに追加
+    const postIds = ["20250613","20250529","20250525","20250515","20250512","20250507","20250502","20250428","20250423"]; // ← 投稿IDをここに追加
 	  
     postIds.forEach(postId => {
       fetch(`${scriptURL}?postId=${postId}&mode=get`)
