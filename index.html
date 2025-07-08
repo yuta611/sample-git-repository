@@ -124,6 +124,29 @@
 
 
 
+<div class="card mb-3" style="background-color: rgba(255,255,255,0.8);">
+  <div class="card-body">
+<!--日付を中央に配置-->
+    <div style="text-align: center;">
+      <h5 class="card-title" style="color:black; margin: 0;">2025年6月30日</h5>
+    </div>
+<!--いいねボタンを右寄せで配置-->
+    <div style="text-align: right; margin-top: 0px;">
+      <button onclick="likePost('20250630')" class="btn btn-outline-danger btn-sm">
+        ❤️ いいね <span id="like-20250630">0</span>
+      </button>
+    </div>
+<!--コメント8-->
+    <p class="card-text" style="color:black; font-size: 1.5rem;">イーブイガーデンのパック汎用カードない！<br>
+		テーマ拡張パックなので今回はイーブイを軸にしたデッキを造りたいです。</p>
+    <img src=""
+		 alt="" class="img-fluid mt-0" style="max-height: 300px;">
+  </div>
+</div>
+<!--空白-->
+<div style="height: 0px;"></div>
+	
+	
 	
 
 
@@ -163,13 +186,13 @@
     </div>
 <!--いいねボタンを右寄せで配置-->
     <div style="text-align: right; margin-top: 0px;">
-      <button onclick="likePost('20250626')" class="btn btn-outline-danger btn-sm">
-        ❤️ いいね <span id="like-20250626">0</span>
+      <button onclick="likePost('20250708')" class="btn btn-outline-danger btn-sm">
+        ❤️ いいね <span id="like-20250708">0</span>
       </button>
     </div>
 <!--コメント8-->
-    <p class="card-text" style="color:black; font-size: 1.5rem;">今日から新パックイーブイガーデンがリリースです！<br>
-		また環境が変わると思うのでデッキを新しくしなくてはなりませんね</p>
+    <p class="card-text" style="color:black; font-size: 1.5rem;">もうすぐで登録者100人か<br>
+	登録してくれている人達に感謝します。</p>
 	  
     <img src=""
 		 alt="" class="img-fluid mt-0" style="max-height: 300px;">
@@ -472,7 +495,7 @@
 
 // 初期表示時に全てのポストの現在のカウントを取得
   window.onload = function() {
-    const postIds = ["20250630","20250626","20250613","20250529","20250525","20250515","20250512","20250507","20250502","20250428","20250423"]; // ← 投稿IDをここに追加
+    const postIds = ["20250708","20250630","20250626","20250613","20250529","20250525","20250515","20250512","20250507","20250502","20250428","20250423"]; // ← 投稿IDをここに追加
 	  
     postIds.forEach(postId => {
       fetch(`${scriptURL}?postId=${postId}&mode=get`)
